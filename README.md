@@ -2,6 +2,14 @@
 
 This is a web application built using Django for flight ticket booking. It allows users to search for flights based on date and time, book tickets, view their bookings, and provides admin functionalities such as adding and removing flights.
 
+---
+
+**Live Link :)**
+
+**https://flight-booking-kartikey.vercel.app/**
+
+---
+
 ![Home Page](s/home.png)
 ![Login Page](s/login.png)
 ![Signup Page](s/signup.png)
@@ -26,10 +34,6 @@ The Flight Booking System uses the following technologies:
 ###### Password - admin
 
 The Flight Booking System uses the following technologies:
-
-
-
-
 - Backend: Django
 - Database: PostgreSQL
 - Frontend: HTML, CSS, JavaScript
