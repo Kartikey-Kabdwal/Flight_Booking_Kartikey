@@ -2,6 +2,8 @@
 
 This is a web application built using Django for flight ticket booking. It allows users to search for flights based on date and time, book tickets, view their bookings, and provides admin functionalities such as adding and removing flights.
 
+![Home Page](s/home.png)
+
 ## Features
 
 - User authentication: Users can sign up and log in to the system.
