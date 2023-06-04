@@ -53,14 +53,12 @@ MIDDLEWARE = [
 ]
 DATABASES = {
     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'Dx2VbVnrtpIWYrcnJj4w',
+        'HOST': 'containers-us-west-4.railway.app',
+        'PORT': '7974',
     }
 }
 
