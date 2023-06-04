@@ -55,6 +55,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+         'OPTIONS': {
+            'deterministic': False,  # Set to False to disable deterministic mode
+        },
     }
 }
 ROOT_URLCONF = 'flight_booking2.urls'
