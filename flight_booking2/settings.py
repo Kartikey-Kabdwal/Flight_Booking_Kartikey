@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-wguw=8$gx)#x033az%vw9yce3c)d2ijga&paaajsfbrw5a_9m(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
+
+
 
 
 # Application definition
@@ -55,11 +58,11 @@ MIDDLEWARE = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'Dx2VbVnrtpIWYrcnJj4w',
-        'HOST': 'containers-us-west-4.railway.app',
-        'PORT': '7974',
+        'NAME': 'fysopvxf',
+        'USER': 'fysopvxf',
+        'PASSWORD': 'Nk7RGFEn5ODr66-jvfS5SzdfZf6pw6oS',
+        'HOST': 'otto.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
