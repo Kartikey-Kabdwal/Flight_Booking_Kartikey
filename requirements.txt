@@ -9,5 +9,4 @@ django-admin-generator==2.6.0
 django-admin-interface==0.19.1
 django-crispy-forms==1.14.0
 pysqlite3-binary
-
-
+python-dotenv
