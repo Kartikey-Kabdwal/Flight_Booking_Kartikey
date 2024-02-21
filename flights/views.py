@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout
@@ -11,11 +12,9 @@ def home(request):
 
 @login_required(login_url='/login/')
 def search_flights(request):
-    if request.method == 'POST':
-        departure_date = request.POST.get('departure_date')
-        flights = Flight.objects.filter(departure_date=departure_date)
-        return render(request, 'flight_list.html', {'flights': flights})
-    return render(request, 'search_flights.html')
+    current_date = timezone.now().date()
+    flights = Flight.objects.filter(departure_date__gte=current_date)
+    return render(request, 'flight_list.html', {'flights': flights})
 
 
 @login_required(login_url='/login/')
