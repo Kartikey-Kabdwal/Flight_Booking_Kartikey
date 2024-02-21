@@ -16,6 +16,14 @@ def search_flights(request):
     flights = Flight.objects.filter(departure_date__gte=current_date)
     return render(request, 'flight_list.html', {'flights': flights})
 
+@login_required(login_url='/login/')
+def cancel_flight(request, booking_id):
+    booking = Booking.objects.get(id=booking_id)
+    if booking.user == request.user and booking.flight.departure_date > timezone.now().date():
+        booking.flight.available_seats += 1
+        booking.flight.save()
+        booking.delete()
+    return redirect('my_bookings')
 
 @login_required(login_url='/login/')
 def book_flight(request, flight_id):
@@ -30,7 +38,10 @@ def book_flight(request, flight_id):
 
 @login_required(login_url='/login/')
 def my_bookings(request):
+    current_date = timezone.now().date()
     bookings = Booking.objects.filter(user=request.user)
+    for booking in bookings:
+        booking.is_upcoming = booking.flight.departure_date >= current_date
     return render(request, 'my_bookings.html', {'bookings': bookings})
 
 

@@ -68,11 +68,25 @@
             cursor: pointer;
             border-radius: 10px;
         }
+
+        .booking-button {
+
+            background-color: rgba(31, 228, 80, 0.918);
+            color: #ffffff;
+            padding: 10px 20px;
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
     <b><a class="logout-button" href="{% url 'logout' %}">Logout</a></b>
+    <b><a class="booking-button" href="{% url 'my_bookings' %}">My Bookings</a></b>
+
 
     <div class="container">
         <h1>Upcoming Flights</h1>
