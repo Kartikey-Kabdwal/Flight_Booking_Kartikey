@@ -10,6 +10,9 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #00c6ff, #0072ff);
             color: white;
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
 
         h1 {
@@ -19,37 +22,19 @@
         }
 
         .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px 30px;
-            background-color: #0d456b;
-            border: 1px solid #0f0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-        }
-
-        /* form {
             max-width: 400px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(216, 209, 110, 0.1);
-
-        } */
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 20px;
-
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         }
 
         nav {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             padding: 20px;
             font-size: 18px;
-
         }
 
         nav ul {
@@ -63,7 +48,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: #fff;
             padding: 10px;
             border-radius: 5px;
             transition: background 0.3s;
@@ -75,28 +60,23 @@
 
         input {
             display: block;
-            width: 95%;
+            width: calc(100% - 22px);
+            margin: 10px auto;
             padding: 10px;
             border-radius: 5px;
             border: none;
             outline: none;
-            font-size: 20px;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
         }
-
-        input[type="text"] {
-            height: 20px;
-            background: #f4f8f4;
-            color: rgb(24, 18, 18);
-            cursor: pointer;
-        }
-
 
         input[type="submit"] {
             margin-top: 20px;
             background: #00c6ff;
             color: white;
             cursor: pointer;
-
+            transition: background 0.3s;
         }
 
         input[type="submit"]:hover {
@@ -106,7 +86,7 @@
         p {
             text-align: center;
             margin-top: 18px;
-            font-size: 24px;
+            font-size: 18px;
         }
 
         a {
@@ -119,13 +99,8 @@
 <body>
     <nav>
         <ul>
-            <b>
-                <li><a href="{% url 'home' %}">Home</a></li>
-            </b>
-            <b>
-                <li><a href="{% url 'admin:index' %}">Admin Login</a></li>
-            </b>
-
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin Login</a></li>
         </ul>
     </nav>
     <h1>User Login</h1>
@@ -137,8 +112,18 @@
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit"
-                style="background: #00c6ff; color: white; cursor: pointer; padding: 10px 20px; border: none; border-radius: 5px; font-size: 18px; transition: background 0.3s;">
+            <button type="submit" style="background-color: #107413; /* Blue */
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);">
                 Login
             </button>
         </form>
